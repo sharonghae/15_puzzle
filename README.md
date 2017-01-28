@@ -1,6 +1,6 @@
-### To run app
+## To run app
 
-## I need node >= 7.1.0
+### I need node >= 7.1.0
 
 Install the dependencies and start the server.
 
