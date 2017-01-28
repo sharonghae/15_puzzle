@@ -1,0 +1,28 @@
+body {
+    color: #114263;
+    text-align: center;
+}
+
+.board {
+    margin: auto;
+    border: 2px solid black;
+    width: 400px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #114263;
+}
