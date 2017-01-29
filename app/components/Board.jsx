@@ -1,12 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
 
-var empty;
-var board = [[],[],[],[]];
-var randomTiles =_.shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
-for(var i = 0; i < 4; i++) {
-    for (var k = 0; k < 4; k++) {
-        var value = randomTiles.pop();
+let empty;
+let board = [[],[],[],[]];
+let randomTiles =_.shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+for(let i = 0; i < 4; i++) {
+    for (let k = 0; k < 4; k++) {
+        const value = randomTiles.pop();
         if(value === 0) empty = [i, k];
         board[i][k] = value;
     }
@@ -30,10 +30,10 @@ export default class Board extends React.Component {
 
 
     handleClick(x, y) {
-        function isMovable(empty) {
+        const isMovable = (empty) => {
             if(x === empty[0]) return 'row';
             else if(y === empty[1]) return 'col';
-        }
+        };
 
         if(!isMovable(this.state.empty)) return;
 
@@ -46,12 +46,12 @@ export default class Board extends React.Component {
         
         if(isMovable(this.state.empty) === 'col') {
             if(this.state.empty[0] > x) {
-                for (var i = this.state.empty[0]; i > x; i--) {
+                for (let i = this.state.empty[0]; i > x; i--) {
                     board[i][y] = board[i - 1][y]
                 }
             }
             else {
-                for (var k = this.state.empty[0]; k < x; k++) {
+                for (let k = this.state.empty[0]; k < x; k++) {
                     board[k][y] = board[k + 1][y]
                 }
             }

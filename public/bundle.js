@@ -21524,7 +21524,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var empty;
+	var empty = void 0;
 	var board = [[], [], [], []];
 	var randomTiles = _lodash2.default.shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]);
 	for (var i = 0; i < 4; i++) {
@@ -21563,9 +21563,9 @@
 	
 	
 	        value: function handleClick(x, y) {
-	            function isMovable(empty) {
+	            var isMovable = function isMovable(empty) {
 	                if (x === empty[0]) return 'row';else if (y === empty[1]) return 'col';
-	            }
+	            };
 	
 	            if (!isMovable(this.state.empty)) return;
 	
@@ -21577,12 +21577,12 @@
 	
 	            if (isMovable(this.state.empty) === 'col') {
 	                if (this.state.empty[0] > x) {
-	                    for (var i = this.state.empty[0]; i > x; i--) {
-	                        board[i][y] = board[i - 1][y];
+	                    for (var _i = this.state.empty[0]; _i > x; _i--) {
+	                        board[_i][y] = board[_i - 1][y];
 	                    }
 	                } else {
-	                    for (var k = this.state.empty[0]; k < x; k++) {
-	                        board[k][y] = board[k + 1][y];
+	                    for (var _k = this.state.empty[0]; _k < x; _k++) {
+	                        board[_k][y] = board[_k + 1][y];
 	                    }
 	                }
 	                board[x][y] = 0;
